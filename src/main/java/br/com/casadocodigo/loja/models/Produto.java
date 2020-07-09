@@ -21,6 +21,8 @@ public class Produto {
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	
+	private String sumarioPath;
 
 	//anotação que faz a lista ser armazenada em uma tabela:
 	@ElementCollection
@@ -70,13 +72,20 @@ public class Produto {
 	}
 	
 	
-
 	public Calendar getDataLancamento() {
 		return dataLancamento;
 	}
 
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
+	}
+	
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 
 	@Override
