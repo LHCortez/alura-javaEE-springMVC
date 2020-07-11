@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,7 +28,7 @@ public class ProdutosController {
 
 	@Autowired
 	private ProdutoDAO produtoDao;
-	
+
 	@Autowired
 	private FileSaver fileSaver;
 
@@ -47,26 +48,25 @@ public class ProdutosController {
 		return modelAndView;
 	}
 
-	 @RequestMapping(method=RequestMethod.POST)
-	    public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, 
-	            BindingResult result, RedirectAttributes redirectAttributes) {
-		 
-		 System.out.println(sumario.getOriginalFilename());
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView gravar(MultipartFile sumario, @Valid Produto produto, BindingResult result,
+			RedirectAttributes redirectAttributes) {
 
-	        if(result.hasErrors()) {
-	            return form(produto);
-	        }
+		System.out.println(sumario.getOriginalFilename());
 
-	        String path = fileSaver.write("arquivos-sumario", sumario);
-	        produto.setSumarioPath(path);
+		if (result.hasErrors()) {
+			return form(produto);
+		}
 
-	        produtoDao.gravar(produto);
+		String path = fileSaver.write("arquivos-sumario", sumario);
+		produto.setSumarioPath(path);
 
-	        redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
+		produtoDao.gravar(produto);
 
-	        return new ModelAndView("redirect:produtos");
-	    }
+		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
 
+		return new ModelAndView("redirect:produtos");
+	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listar() {
@@ -76,5 +76,16 @@ public class ProdutosController {
 
 		return modelAndView;
 	}
+
+	@RequestMapping("/detalhe/{id}")
+	public ModelAndView detalhe(@PathVariable("id")Integer id) {
+		
+		ModelAndView modelAndView = new ModelAndView("produtos/detalhe");
+		Produto produto = produtoDao.find(id);
+		modelAndView.addObject("produto", produto);
+
+		return modelAndView;
+	}
+
 
 }
