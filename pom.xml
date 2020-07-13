@@ -101,7 +101,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.15</version>
+			<version>8.0.20</version>
 		</dependency>
 
 		<dependency>
@@ -113,7 +113,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.0.Final</version>
+			<version>4.2.0.Final</version>
 		</dependency>
 		
 		<!-- Inserido por questões de compatibilidade com o JRE 9 +	 -->
