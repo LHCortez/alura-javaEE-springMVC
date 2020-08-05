@@ -45,11 +45,9 @@ body {
 				<ul class="nav navbar-nav navbar-right">
 					<li class="nav-item"><a href="#"> <security:authentication property="principal" var="usuario" /> Usuário: ${usuario.username }
 					</a></li>
-					 <li class="nav-item">
-    				 <a href="<c:url value="/logout" />">Sair</a></span>
- 					</li>
+					<li class="nav-item"><a href="<c:url value="/logout" />">Sair</a></span></li>
 				</ul>
-				
+
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
@@ -66,13 +64,14 @@ body {
 			<tr>
 				<th>Título</th>
 				<th>Descrição</th>
+				<th>Preços</th>
 				<th>Páginas</th>
 			</tr>
-
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
-					<td><a href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build()}"> ${produto.titulo} </a></td>
+					<td><a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build()}"> ${produto.titulo} </a></td>
 					<td>${produto.descricao}</td>
+					<td>${produto.precos}</td>
 					<td>${produto.paginas}</td>
 				</tr>
 			</c:forEach>
