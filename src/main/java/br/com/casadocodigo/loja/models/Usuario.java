@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -22,8 +23,8 @@ public class Usuario implements UserDetails {
     private String senha;
     private String nome;
 
-    @OneToMany(fetch=FetchType.EAGER)
-    private List<Role> roles = new ArrayList<>();
+    @OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.PERSIST)
+    	private List<Role> roles = new ArrayList<Role>();
 
     public String getEmail() {
         return email;
