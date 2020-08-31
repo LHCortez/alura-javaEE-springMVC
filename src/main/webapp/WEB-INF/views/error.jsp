@@ -6,6 +6,7 @@
 <tags:pageTemplate titulo="Produto não encontrado">
 
     <section id="index-section" class="container middle">
+    
         <h2>Um erro ocorreu. ):</h2>
 
         <!-- 
