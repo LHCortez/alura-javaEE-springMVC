@@ -4,6 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 
+<title>${titulo }- Casa do Código</title>
+
 <c:url value="/" var="contextPath" />
 
 <header id="layout-header">
