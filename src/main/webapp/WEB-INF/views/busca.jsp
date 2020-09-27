@@ -7,24 +7,26 @@
 
 <tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile e muito mais...">
 
-
 	<section id="index-section" class="container middle">
+	
 		<h1 class="cdc-call"><fmt:message key="home.chamada" /></h1>
-
+		
+		<p style="text-align: center; font-weigth: bold;"> 			
+			<c:if test="${nome != null}"> <fmt:message key="buscar.livros" />: ${nome} </c:if>
+		</p>
+		
 		<ul class="clearfix book-collection">
-
 			<c:forEach items="${produtos }" var="produto">
 				<li><a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }" class="block clearfix">
-						<h2 class="product-title">${produto.titulo }</h2> <img width="143" height="202"
-							src="${produto.sumario}"
-							alt="${produto.titulo }" title="${produto.titulo }" /> <small class="buy-button">Compre</small>
+						<h2 class="product-title">${produto.titulo }</h2> 
+						<img width="143" height="202" src="${produto.sumario}"
+							alt="${produto.titulo }" title="${produto.titulo }" /> 
+						<small class="buy-button">Compre</small>
 					</a></li>
 			</c:forEach>
-
 		</ul>
 
 		<h2 class="cdc-call"><fmt:message key="home.diferenciais" /></h2>
-
 		<ul id="cdc-diferenciais" class="clearfix">
 			<li class="col-left">
 				<h3><fmt:message key="home.drm" /></h3>
@@ -55,7 +57,7 @@
 				</p>
 			</li>
 		</ul>
-
+		
 	</section>
 
 </tags:pageTemplate>

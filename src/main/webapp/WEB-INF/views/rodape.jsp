@@ -4,141 +4,91 @@
             xmlns:v="http://rdf.data-vocabulary.org/#"> 
         </nav>
         <div id="collections-footer">
-            <p class="footer-title">Coleções de Programação</p>
+            <p class="footer-title"><fmt:message key="rodape.colecoes"/></p>
             <ul class="footer-text-links">
                 <li>
-                    <a href="/collections/livros-de-java">
-                        Java
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'java').build() }">
+                        <fmt:message key="navegacao.categoria.java" />
                     </a>
                 </li>
                 <li>
-                    <a href="/collections/livros-desenvolvimento-web">
-                        Desenvolvimento Web
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'mobile').build() }">
+                        <fmt:message key="navegacao.categoria.mobile" />
                     </a>
                 </li>
                 <li>
-                    <a href="/collections/livros-de-mobile">
-                        Mobile
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'games').build() }">
+                        <fmt:message key="navegacao.categoria.games" />
                     </a>
                 </li>
                 <li>
-                    <a href="/collections/games">
-                        Games
-                    </a>
-                </li>
-                <li>
-                    <a href="/collections/livros-de-front-end">
-                        Front End
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'frontend').build() }">
+                        <fmt:message key="navegacao.categoria.front_end" />
                     </a>
                 </li>
             </ul>
-            <p class="footer-title">Outros Assuntos</p>
+            <p class="footer-title"><fmt:message key="rodape.outros"/></p>
             <ul class="footer-text-links">
                 <li>
-                    <a href="/collections/livros-de-agile">
-                        Agile
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'agile').build() }">
+                        <fmt:message key="navegacao.categoria.agile" />
                     </a>
                 </li>
                 <li>
-                    <a href="/collections/outros">
-                        e outros...
+                    <a href="${s:mvcUrl('HC#buscarPorCategoria').arg(0, 'outros').build() }">
+                        <fmt:message key="navegacao.categoria.outros" />
                     </a>
                 </li>
             </ul>
         </div>
         <div id="social-footer">
-            <p class="footer-title">Links da Casa do Código</p>
+            <p class="footer-title"><fmt:message key="rodape.links.casadocodigo"/></p>
             <ul class="footer-text-links">
                 <li>
-                    <a href="http://livros.casadocodigo.com.br" 
-                            rel="nofollow">
-                        Meus E-books
+                    <a href="https://www.casadocodigo.com.br/" target="_blank" rel="nofollow">
+                       <fmt:message key="rodape.links.verdade"/>
                     </a>
                 </li>
                 <li>
-                    <a href="/pages/sobre-a-casa-do-codigo">
-                        Sobre a Casa do Código
+                    <a href="https://www.caelum.com.br" target="_blank" rel="nofollow">
+                        Caelum 
                     </a>
                 </li>
                 <li>
-                    <a href="/pages/perguntas-frequentes">
-                        Perguntas Frequentes
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.caelum.com.br">
-                        Caelum - Ensino e Inovação
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.codecrushing.com/" 
-                            rel="nofollow">
-                        Code Crushing
+                    <a href="http://www.alura.com.br" 
+                            rel="nofollow"  target="_blank">
+                        Alura
                     </a>
                 </li>
             </ul>
-            <p class="footer-title">Redes Sociais</p>
-            <ul>
-                <li class="social-links">
-                    <a href="http://www.twitter.com/casadocodigo" 
-                            target="_blank" id="twitter" 
-                                rel="nofollow">
-                        Facebook
+             <p class="footer-title"><fmt:message key="rodape.links.luiz"/></p>
+            <ul class="footer-text-links">
+                <li>
+                    <a href="https://lhcortez.github.io/portfolio/" target="_blank" rel="nofollow">
+                       Portfolio
                     </a>
-                    <a href="http://www.facebook.com/casadocodigo" 
-                            target="_blank"    id="facebook" 
-                                rel="nofollow">
-                        Twitter
+                </li>
+                <li>
+                    <a href="https://github.com/LHCortez" target="_blank" rel="nofollow">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/luizhcortez/" 
+                            rel="nofollow"  target="_blank">
+                        LinkedIn
                     </a>
                 </li>
             </ul>
         </div>
         <div id="newsletter-footer">
-            <p class="footer-title">Receba as Novidades e Lançamentos</p>
-            <div id="form-newsletter">
-                <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dFhxZ2tDalFiclU4T2FLZVY4UXVUc2c6MQ&embedded=true&ifq"
-                        method="POST" id="ss-form" 
-                            class="form-newsletter">
-                    <ul>
-                        <li>
-                            <input type="hidden" 
-                                name="pageNumber" 
-                                    value="0">
-                            <input type="hidden" 
-                                name="backupCache" 
-                                    value="">
-                            <input type="email" name="entry.0.single" 
-                                value="" class="ss-q-short" id="entry_0" 
-                                    placeholder="seu@email.com">
-                        </li>
-                        <li>
-                            <input type="submit" name="submit" 
-                                value="Quero Receber!" 
-                                    id="submit-newsletter">
-                        </li>
-                    </ul>
-                </form>
-                <ul>
-                    <li class="ie8">
-                        <a href="https://docs.google.com/spreadsheet/viewform?formkey=dFhxZ2tDalFiclU4T2FLZVY4UXVUc2c6MQ&ifq"
-                                rel="nofollow">
-                            Receba as Novidades e Lançamentos
-                        </a>
-                    </li>
-                </ul>
-            </div>
+
             <ul class="footer-payments">
                 <li>
-                    <img class="accepts-paypal" 
-                        src="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/accepts_paypal.png?58522" 
-                            border="0" alt="Paypal" 
-                                width="130" height="80" />
+                    <img class="accepts-paypal" src="${context }/resources/imagens/paypal.png" border="0" alt="Paypal"/>
                 </li>
                 <li>
-                    <img class="accepts-pagseguro" 
-                        src="//cdn.shopify.com/s/files/1/0155/7645/t/177/assets/logopagseguro.png?58522" 
-                            border="0" alt="PagSeguro" 
-                                width="180" height="26" />
+                    <img class="accepts-pagseguro" src="${context }/resources/imagens/pagseguro.png" border="0" alt="PagSeguro"/>
                 </li>
             </ul>
         </div>

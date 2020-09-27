@@ -43,7 +43,7 @@ public class PagamentoController {
 			
 			enviaEmailCompraProduto(usuario);
 			
-			return new ModelAndView("redirect:/");
+			return new ModelAndView("sucesso");
 		} catch (HttpClientErrorException e) {
 			e.printStackTrace();
 			model.addFlashAttribute("message", "Valor maior que o permitido! Compra negada!");

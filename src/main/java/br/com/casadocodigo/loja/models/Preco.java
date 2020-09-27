@@ -11,6 +11,14 @@ public class Preco {
 	private BigDecimal valor;
 	private TipoPreco tipo;
 	
+	public Preco(BigDecimal valor, TipoPreco tipo) {
+	    this.valor = valor;
+	    this.tipo = tipo;
+	}
+	
+	public Preco() {
+	}
+	
 	public BigDecimal getValor() {
 		return valor;
 	}

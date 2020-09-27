@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +11,7 @@
 <meta charset="UTF-8">
 
 <c:url value="/resources/css" var="cssPath" />
+<c:set var="context" value="${pageContext.request.contextPath}" />
 
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
 
@@ -43,9 +45,8 @@ body {
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li class="nav-item"><a href="#"> <security:authentication property="principal" var="usuario" /> Usuário: ${usuario.username }
+					<li class="nav-item"><a href="<c:url value='/logout'/>"> <security:authentication property="principal" var="usuario" /> Usuário: ${usuario.username} (sair)
 					</a></li>
-					<li class="nav-item"><a href="<c:url value="/logout" />">Sair</a></span></li>
 				</ul>
 
 			</div>
@@ -66,6 +67,9 @@ body {
 				<th>Descrição</th>
 				<th>Preços</th>
 				<th>Páginas</th>
+				<th>Atualizar</th>
+				<th>Remover</th>
+				
 			</tr>
 			<c:forEach items="${produtos}" var="produto">
 				<tr>
@@ -73,6 +77,15 @@ body {
 					<td>${produto.descricao}</td>
 					<td>${produto.precos}</td>
 					<td>${produto.paginas}</td>
+					<td>
+						<a href="<c:url value='/produtos/${produto.id}/form' />"><img src="${context }/resources/imagens/refresh.png" alt="Atualizar"></a>
+					</td>
+					<td>
+						<form:form action="${s:mvcUrl('PC#deletar').arg(0, produto.id).build()}" method="POST">
+							<input type="image" src="${context }/resources/imagens/excluir.png"	alt="Excluir" title="Excluir" />
+						</form:form>
+					</td>
+								
 				</tr>
 			</c:forEach>
 		</table>
